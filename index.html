@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordly</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: cursive;
+        }
+
+        #textBox {
+            width: 370px;
+            height: 230px;
+            border: 2px solid black;
+            border-radius: 4px;
+            margin: 30px auto;
+            padding: 10px;
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 70px;
+        }
+
+        .color-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid black;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button:not(.color-btn) {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Wordly</h1>
+
+    <div id="textBox" contenteditable="true">
+        Type your text here...
+    </div>
+
+    <div class="controls">
+
+        <div>
+            <h3>Background Color</h3>
+
+            <button class="color-btn"
+            style="background: beige"
+            onclick="changeBackground('beige')"></button>
+
+            <button class="color-btn"
+            style="background: blue"
+            onclick="changeBackground('blue')"></button>
+
+            <button class="color-btn"
+            style="background: grey"
+            onclick="changeBackground('grey')"></button>
+        </div>
+
+        <div>
+            <h3>Text Color</h3>
+
+            <button class="color-btn"
+            style="background: green"
+            onclick="changeTextColor('green')"></button>
+
+            <button class="color-btn"
+            style="background: red"
+            onclick="changeTextColor('red')"></button>
+
+            <button class="color-btn"
+            style="background: blue"
+            onclick="changeTextColor('blue')"></button>
+        </div>
+
+        <div>
+            <h3>Font</h3>
+
+            <button onclick="changeFont('Arial')">
+                Arial
+            </button>
+
+            <button onclick="changeFont('cursive')">
+                Cursive
+            </button>
+        </div>
+
+    </div>
+
+    
+    <script>
+
+        let box = document.getElementById("textBox");
+
+        function changeBackground(color) {
+            box.style.backgroundColor = color;
+        }
+
+        function changeTextColor(color) {
+            box.style.color = color;
+        }
+
+        function changeFont(font) {
+            box.style.fontFamily = font;
+        }
+
+    </script>
+
+</body>
+</html>
